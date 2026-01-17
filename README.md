@@ -3,10 +3,9 @@ This repository accompanies the MNRAS paper:
 > **Population synthesis predictions of the Galactic compact binary gravitational wave foreground detectable by LISA**   
 > McMillan et al. (2026), *MNRAS*
 
-and provides the simulated compact binary populations and analysis tools used in that work.
+The paper is available via DOI: **[https://doi.org/10.1093/mnras/stag117](https://doi.org/10.1093/mnras/stag117)**
 
-The paper is available via DOI under an MIT License: **[https://doi.org/10.1093/mnras/stag117](https://doi.org/10.1093/mnras/stag117)**  
-
+This repository provides the simulated compact binary populations and analysis tools used in that work.
 ## Citation
 If you use any data, code, or methodology from this repository, please cite the paper above.
 ```bibtex
