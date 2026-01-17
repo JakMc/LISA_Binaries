@@ -1,12 +1,11 @@
 # LISA Binaries
 This repository accompanies the MNRAS paper:
-> **Population synthesis predictions of the Galactic compact binary gravitational wave foreground detectable by LISA**  
-> *Jake McMillan*  
-> *Monthly Notices of the Royal Astronomical Society (MNRAS)*
+> **Population synthesis predictions of the Galactic compact binary gravitational wave foreground detectable by LISA**   
+> McMillan et al. (2026), *MNRAS*
 
 and provides the simulated compact binary populations and analysis tools used in that work.
 
-The paper is available via DOI under an MIT License: **[https://doi.org/XXXXXXXX](https://doi.org/10.1093/mnras/stag117)**  
+The paper is available via DOI under an MIT License: **[https://doi.org/10.1093/mnras/stag117](https://doi.org/10.1093/mnras/stag117)**  
 
 ## Citation
 If you use any data, code, or methodology from this repository, please cite the paper above.
@@ -36,12 +35,10 @@ These simulations are ideal for studying compact binary evolution, gravitational
 - Eccentric binaries and higher harmonics are included in the PSD calculation.
 
 ## Large files (Git LFS required)
-The population catalogs (`.fits`) are stored using **Git Large File Storage (Git LFS)**.
-
-Before cloning the repository, install Git LFS:
+The population catalogs (`.fits`) are stored using **Git Large File Storage (Git LFS)**:
 ```bash
 git lfs install
-git clone https://github.com/USERNAME/LISA_Binaries.git
+git clone https://github.com/JakMc/LISA_Binaries.git
 ```
 Without Git LFS, the `.fits` files will be downloaded as pointer files and cannot be read by `astropy`.
 
@@ -75,10 +72,10 @@ f_noise = np.logspace(-5, 0, 1000)
 f_l, P_l, err_l = LISA_Binaries_PSD.calc_LISA_signal(M_chirp, D, forb, ecc=ecc, c_0=1.3, sf=10, lineout=False)
 
 
-fig, axs = plt.subplots(figsize=(3.375, 2.25), dpi=600)
+fig, axs = plt.subplots(figsize=(4, 3), dpi=600)
 
 plt.plot(f_noise, LISA_Binaries_PSD.LISA_S_noise(f_noise), c="black", label="Noise")
-plt.errorbar(f_l, P_l, err_l, c="#4A90E2", ecolor="#A4C8F0", label="GWs", capsize=1.5, elinewidth=1, capthick=1)
+plt.errorbar(f_l, P_l, yerr=err_l, c="#4A90E2", ecolor="#A4C8F0", label="GWs", capsize=1.5, elinewidth=1, capthick=1)
 
 plt.legend()
 plt.xscale("log")
